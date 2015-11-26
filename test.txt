@@ -1,0 +1,6 @@
+single single1 int 23 
+single single2 str hello,_world 
+single single3 long 394429492 
+single single4 float 234.34 
+list list str this_is_a_test int 394 float 234.3 long 34829 
+dict dict str this_is_another_test int 3294 float 2344.3 long 3943 
