@@ -92,7 +92,3 @@ class h (custom_text):
     magenta = esc + '[45m'
     cyan = esc + '[46m'
     white = esc + '[47m'
-
-
-x = getNum('>')
-print type(x), x
