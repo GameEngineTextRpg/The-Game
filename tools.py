@@ -26,6 +26,41 @@ def clear ():
 def printRaw (text):
     sys.stdout.write(text)
 
+# gets an integer from the user
+def getInt (prompt, failMessage = ''):
+    while True:
+        try:
+            return int(raw_input(prompt))
+        except ValueError:
+            print failMessage
+                
+# gets a float from the user
+def getFloat (prompt, failMessage = ''):
+    while True:
+        try:
+            return float(raw_input(prompt))
+        except ValueError:
+            print failMessage
+
+# gets a long from the user
+def getLong (prompt, failMessage = ''):
+    while True:
+        try:
+            return long(raw_input(prompt))
+        except ValueError:
+            print failMessage
+
+# gets a number from user, automatically converts it into whatever type it is
+def getNum (prompt, failMessage = ''):
+    userInput = getFloat(prompt, failMessage)
+    if long(userInput) == userInput:
+        if int(userInput) == userInput:
+            return int(userInput)
+        else:
+            return long(userInput)
+    else:
+        return userInput
+
 # all y'alls custom text yeehawww
 class custom_text (object):
     esc = '\033'
@@ -57,3 +92,7 @@ class h (custom_text):
     magenta = esc + '[45m'
     cyan = esc + '[46m'
     white = esc + '[47m'
+
+
+x = getNum('>')
+print type(x), x
