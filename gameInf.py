@@ -5,7 +5,7 @@ class worldMap(object):
   def __init__(self, Map):
     self.Map = Map
     
-  def populate(self, enemy):
+  def populateRandomly(self, enemy):
     xcord = random.randint(len(Map))
     ycord = random.randint(len(Map[0]))
     Map[xcord][ycord].entities.append(enemy)
@@ -18,17 +18,17 @@ class chunk(scene): #one part of the map that is stored
     self.items = items #list containing the items in the chunk
     self.objectives = objectives #list containing the main objectives in the chunk
     
-  class objective(object): #tasks or quests that the player must complete in order to win
+class objective(object): #tasks or quests that the player must complete in order to win
     
-    def __init__(self, completed)
-      self.completed = completed
+  def __init__(self, completed)
+    self.completed = completed
       
-    def onComplete(self): #this is an action that occurs upon completion
-      return "this is a dummy function you should NEVER see this (onComplete)"
+  def onComplete(self): #this is an action that occurs upon completion
+    return "this is a dummy function you should NEVER see this (onComplete)"
 
 class entity(object): #this is where all of the entities are located, these 
 
-  def __init__(self, gold, level, xp, inventory, equippedItem, currentHealth, health, defense, attack, name):
+  def __init__(self, gold, level, xp, inventory, equippedItem, currentHealth, health, defense, attack, name, position):
     self.gold = gold #in-game curency that is used to by items
     self.level = level #self explanitory
     self.xp = xp #in game mechanic that is erned after every monster kill
@@ -56,11 +56,15 @@ class entity(object): #this is where all of the entities are located, these
     
 class item(self): #items are anything that the player can interact with and they can aid the player in various ways
   
-  def __init__(self, itemType, statModifier, modifiedStat, itemName):
+  def __init__(self, itemType, statModifier, modifiedStat, itemName): 
     self.itemType = itemType
     self.statModifier = statModifier
     self.modifiedStat = modifiedStat
     self.itemName = itemName
+  
+  def applyEffects(self, condition, target): #this is how things are attacked and potions are added and other stuff
+    if condition:
+      return "Dummy function you should never see"
   
   
   
