@@ -42,8 +42,6 @@ class entity(object): #this is where all of the entities are located, these
     #name of your champion
     self.name = name
     
-  
-    
   def displayStats(self):
     print self.name
     print "health = %d/%d" % (self.currentHealth, self.health)
@@ -54,17 +52,26 @@ class entity(object): #this is where all of the entities are located, these
     print "xp = %d" % self.xp
     print "gold = %d" % self.gold
     
+  def levelUp(self):
+    if xp >= level * 100:
+      xp -= level * 100
+      level += 1
+      
+  def attack(self, target):
+    
 class item(self): #items are anything that the player can interact with and they can aid the player in various ways
   
-  def __init__(self, itemType, statModifier, modifiedStat, itemName): 
+  def __init__(self, itemType, statModifier, modifiedStat, itemName, useageDamage): 
     self.itemType = itemType
     self.statModifier = statModifier
     self.modifiedStat = modifiedStat
     self.itemName = itemName
+    self.useageDamage = useageDamage
   
-  def applyEffects(self, condition, target): #this is how things are attacked and potions are added and other stuff
+  def applyEffects(self, condition, target, onUseEffects): #this is how things are attacked and potions are added and other stuff
     if condition:
       return "Dummy function you should never see"
+  
   
   
   
