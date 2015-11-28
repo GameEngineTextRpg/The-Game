@@ -12,9 +12,19 @@ class worldMap(object):
     
 class chunk(scene): #one part of the map that is stored
   
-  def __init__(self, entities, items):
-    self.entities = entities
-    self.items = items
+  def __init__(self, entities, items, name, objectives):
+    self.name = name #name of the chunk
+    self.entities = entities #list containing the specific enemies in the chunk
+    self.items = items #list containing the items in the chunk
+    self.objectives = objectives #list containing the main objectives in the chunk
+    
+  class objective(object): #tasks or quests that the player must complete in order to win
+    
+    def __init__(self, completed)
+      self.completed = completed
+      
+    def onComplete(self): #this is an action that occurs upon completion
+      return "this is a dummy function you should NEVER see this (onComplete)"
 
 class entity(object): #this is where all of the entities are located, these 
 
