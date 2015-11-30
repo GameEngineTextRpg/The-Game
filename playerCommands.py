@@ -13,25 +13,25 @@ class attack(action):
 	def doAction(self, recipient): #IMPORTANT: fill in later
 		pass
 
-class north(action):
+class north(action, world, direction):
+	
+	def doAction(self, nullStr): #Moves the player
+		
+		if direction = 1:
+			world.player.position[0] += 1
+	
+		elif direction = 2:
+			world.player.position[0] -= 1
+			
+		elif direction = 3:
+			world.player.position[1] += 1
+			
+		elif direction = 4:
+			world.player.position[1] -= 1
+			
+		world.update()
 
-	def doAction(self, nullStr): #IMPORTANT: fill in later
-		pass
 
-class south(action):
-
-	def doAction(self, nullStr): #IMPORTANT: fill in later
-		pass
-
-class east(action):
-
-	def doAction(self, nullStr): #IMPORTANT: fill in later
-		pass
-
-class west(action):
-
-	def doAction(self, nullStr): #IMPORTANT: fill in later
-		pass
 
 class openMenu(action):
 
