@@ -63,6 +63,7 @@ class entity(object): #this is where all of the entities are located, these
     else:
       return "That is not a valid target"
     
+    
 class item(self): #items are anything that the player can interact with and they can aid the player in various ways
   
   def __init__(self, itemType, statModifier, modifiedStat, itemName, useageDamage): 
