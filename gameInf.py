@@ -1,7 +1,7 @@
 import random
 
 class worldMap(object):
-  
+  user = entity(0, 1, 0, [], None, 100, 100, 50, 20, "player", [0, 0])
   def __init__(self, Map):
     self.Map = Map
     
