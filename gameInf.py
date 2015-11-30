@@ -58,6 +58,10 @@ class entity(object): #this is where all of the entities are located, these
       level += 1
       
   def attack(self, target):
+    if isinstance(entity, target):
+      target.currentHealth -= self. equippedItem.useageDamage
+    else:
+      return "That is not a valid target"
     
 class item(self): #items are anything that the player can interact with and they can aid the player in various ways
   
@@ -71,7 +75,5 @@ class item(self): #items are anything that the player can interact with and they
   def applyEffects(self, condition, target, onUseEffects): #this is how things are attacked and potions are added and other stuff
     if condition:
       return "Dummy function you should never see"
-  
-  
   
   
